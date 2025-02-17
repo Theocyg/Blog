@@ -1,0 +1,7 @@
+  site_name: CBBH POUR LES NULS
+
+  nav:
+  - Home: index.md
+  - About: about.md
+
+  theme: readthedocs
