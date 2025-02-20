@@ -1,13 +1,19 @@
-  site_name: CBBH POUR LES NULS
-
+  site_name: Picsou's Blog
+  
+  repo_url: https://github.com/Theocyg/Blog
+  site_author: Picsou
   nav:
   - Home: index.md
   - About: about.md
 
-  theme: simple-blog
-  hljs_languages:
-    - powershell
-  locale :
-    - fr
-  analytics:
-    gtag: G-ABC123
+  theme: 
+    name: simple-blog
+    locale: fr
+    logo: ./assets/logo/logo.webp
+    features:
+    - search.suggest
+    - search.highlight
+    - search.share
+
+  plugins:
+  - search
