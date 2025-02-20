@@ -4,4 +4,10 @@
   - Home: index.md
   - About: about.md
 
-  theme: readthedocs
+  theme: simple-blog
+  hljs_languages:
+    - powershell
+  locale :
+    - fr
+  analytics:
+    gtag: G-ABC123

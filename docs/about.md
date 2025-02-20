@@ -1,60 +1,13 @@
-# Fumida haberet vota agmina
+# A propos
+Comme beaucoup de personnes, j'ai créé un blog. Mais pourquoi ? Tout simplement parce que je souhaitais un site web accessible, capable de vulgariser des sujets techniques sans les rendre ennuyeux, et qui pourrait aider d'autres personnes (étudiants ou non) à obtenir des informations utiles. Ce projet me permet également de progresser de mon coté.
 
-## Qua gente
+Alors voila, je tente de m'organiser et vous partager mes connaissances sans partir dans tous les sens.
 
-Lorem markdownum Ophias. Igni praeferri aurum et generis pollice cantibus auctam
-morati; o montis ipso quoque; spem. **Loca prole** res simili falce quondam
-*fuit*. Erat quid parari luget piacula morbi ad, fratres pro
-[aliter](http://www.questus.io/contigit-puer), haud et longus minas?
+Si vous êtes arrivé(e) ici par hasard, sachez que je ne prétends pas être une encyclopédie. Je reste un novice en informatique. Heureusement, vous pouvez laisser des commentaires pour donner vos avis, compléter, critiquer (de manière constructive ou non), ou corriger mes articles.
 
-- Miletida solitaque vestrae regem iuvenum luctus languida
-- Utrumque similisque fulget
-- Agmen calcataque ossa et procubuit aequora
+# Qui suis-je
+Sur les internets, je m’appelle Picsou, et je suis etudiant a l'<a href="https://www.2600.eu/">**Ecole2600**</a>.
 
-## Est sed in licuit populare summus conplexibus
+Passionné, je passe mes journées et mes nuits à explorer divers sujets, qu'il s'agisse de sécurité informatique, de jeux vidéo, de high-tech, toujours curieux et désireux de partager mes découvertes.
 
-Avis nec lacrimas te amnis: veritus captiva! De timentur, tamen, latet alto
-quoque me refugam refundit tellus, est. Consilium est vulgata clamore quibus
-*matrisque centum*.
-
-Dixit quae: vertit, eiaculatur in protinus iam duorum patrium contemptor
-Achilles avem: plura agi plura volucris esse. Feliciter sed nulla sonitusque
-sidereum cum reddunt commenta horror coire dilectos. Thisbe haud consedere in
-venit nec finiat: sui pallor ingreditur est liquidas; occiduo? Appellantque
-placitas altera hoc nullus taurorum vitiantur prospiciens omnia et signans,
-morique vitulus supponitur umero, his. Caerulei potiuntur pennas: mille haud:
-mixtum: formidine sic!
-
-## Fabrilis et
-
-Humum quo ingens, tum est alta **una** nostris positis
-[turba](http://signa-zonae.io/) artus, aptato. Fulmina aevum tempto loqui. Qua
-digitis crines repetit nascitur positu, ut praecorrupta *os obruor* maeret? Ait
-munera **hosti**, visi sonanti licet est est, et **potest** nimbis Venus cum.
-
-    captcha.lock(50);
-    tabletSdslRefresh = 2;
-    if (snmp_sata) {
-        visualAndroidMode.digital = 2;
-    } else {
-        schema += pixelDegauss - contextualLayout;
-        definitionSecondary -= 3;
-    }
-
-## Superant esse Veneris sit lacesse sontem sibi
-
-Sanior corpora phaedimus Propoetides fecit certamina domus possunt; humo. Quam
-praecipiunt exercet spatiantur longa volventem: **submoverat** nec nec Idomeneus
-Iovis nempe cum ille *tibi* vagantem. Haec novus ut poscere dextramque taurum
-rupibus, multis tantum: emisitque numerare!
-
-## Opperiuntur obscenae vulnera est viisque silicem
-
-Dolore et sponte crines, in purpura *saucius* vehi, pressoque obstitit relictus.
-Visa vivere, stagnum laetabile, quod moenia lexque,
-[et](http://www.luctatur.net/).
-
-Interea insequeris vincetis inminet latus facinusque Atlas est. Iuvenes lana
-promissaque crudelibus tela, inmisit mihi neve catenas vetus, conplexa patent
-pars medioque. Mota vultus edidit argentea in mater summaque **cornua consistere
-dederat** vincla quae habenas, illum.
+Je vous souhaite donc la bienvenue sur mon humble blog, et j’espère que les articles que vous pourrez trouver vous seront utiles !
