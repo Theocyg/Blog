@@ -7,7 +7,7 @@ nav:
   - Active Directory:
       - Introduction: ActiveDirectory/Introduction.md
       - Kerberos: ActiveDirectory/Kerberos.md
-  -Darknet : Darknet.md
+  - Darknet: Darknet.md
 theme:
   name: simple-blog
   locale: fr
