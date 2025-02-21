@@ -1,5 +1,3 @@
-# Kerberos
-
 Active Directory est une solution de Microsoft utilisée pour la gestion d’un système d’information, articulée sur les points suivants :
 
 - Un système d’annuaire de ressources (LDAP)
