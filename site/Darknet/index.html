@@ -1,0 +1,220 @@
+<!doctype html>
+<html data-bs-theme="">
+    <head>
+                <title>Darknet - Picsou's Blog</title>
+
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+            
+            
+            <meta name="author" content="Picsou">
+
+            
+                <link  rel="icon" type="image/x-icon" href="../assets/img/favicon.ico">
+            
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+            <link rel="stylesheet" href="../assets/css/root.min.css">
+            <link rel="stylesheet" href="../assets/css/main.min.css">
+                <script src="../search/main.js"></script>
+
+            
+                
+            
+    </head>
+
+    <body>
+        <div class="container py-3">
+            <header>
+                    <!-- block header -->
+<nav class="navbar navbar-expand-xl border-bottom">
+    <div class="container-fluid">
+        
+            <img class="logo" src="https://github.com/Theocyg/Blog/raw/main/assets/logo/logo.webp">
+        
+
+        
+            <span class=" fs-4 title-color site-name" id="component-site-name" style="text-transform: uppercase;">Picsou's Blog</span>
+        
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsMenu"
+            aria-controls="navbarsMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse flex-column ml-auto" id="navbarsMenu">
+            <ul class="navbar-nav">
+
+                <!-- block menu -->
+                <li class="nav-item">
+                    <!-- block menu -->
+    
+        <li class="nav-item" id="component-menu">
+            <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="
+                            nav-link text-gray text-decoration-none" href="..">[Home]</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="
+                            nav-link dropdown-toggle text-decoration-none" href="#" data-bs-toggle="dropdown">[Active Directory]</a>
+                            <ul class="dropdown-menu">
+                                    <!-- block dropdown-menu -->
+    <li>
+        <a href="../ActiveDirectory/Introduction/" class="dropdown-item text-decoration-none ">Introduction</a>
+    </li>
+<!-- endblock -->
+                                    <!-- block dropdown-menu -->
+    <li>
+        <a href="../ActiveDirectory/Kerberos/" class="dropdown-item text-decoration-none ">Kerberos</a>
+    </li>
+<!-- endblock -->
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class=" active 
+                            nav-link text-gray text-decoration-none" href="./">[Darknet]</a>
+                        </li>
+            </ul>
+        </li>
+<!-- endblock -->
+                </li>
+                <!-- endblock -->
+
+                <!-- block search -->
+                <li class="nav-item">
+                    <a class="collapsed" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <div class="md-search-icon">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </div>
+                    </a>
+                </li>
+                <!--  endblock -->
+
+                <!-- block source -->
+                <li class="nav-item">
+                    
+                        
+                    
+                </li>
+                <!--  endblock -->
+            </ul>
+        </div>
+    </div>
+</nav>
+<!--  endblock -->
+            </header>
+
+            <main><!-- block search -->
+<div class="collapse" id="collapseExample">
+    <div role="search" class="search-box">
+        <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+            <input type="text" name="q" class="search-query"
+            placeholder="Search docs" title="Type search term here" />
+        </form>
+    </div>
+</div>
+<!-- endblock -->
+
+                
+                        <!-- block content -->
+<section class="container post" id="component-content">
+    <article>
+        <header>
+            
+                <h1 class=" title" id="component-title">Darknet</h1>
+            
+        </header>
+        <p><p>Cet article vise à clarifier rapidement et simplement les concepts du deep web et du dark web. Beaucoup de gens me demandent si je suis déjà allé sur ces trucs sans vraiment comprendre ce que c'est ni quelles sont les différences. Cet article n'a pas pour but de faire une étude approfondie, mais plutôt de donner une idée claire et rapide de ce que signifient ces termes. Je propose donc quelques lignes pour expliquer en 5 minutes ce qu'impliquent ces termes.</p>
+<h2 id="deep-web">Deep Web</h2>
+<p>Le <em>deep web</em>, ou web profond, est la partie "cachée" d'Internet, à opposer au web visible. Comme les deux s'opposent, expliquer l'un permet de comprendre l'autre.</p>
+<h3 id="web-visible">Web Visible</h3>
+<p>Le web visible, c'est celui que l'utilisateur lambda connaît et parcourt. Ce sont toutes les pages web référencées par les moteurs de recherche comme Yahoo, Google, Qwant, Bing, etc. Un moteur de recherche effectue par définition une recherche dans une base de données qu'il a créée en référençant des pages. Pour cela, il tente de <strong>trouver</strong> toutes les pages web possibles et essaie de <strong>comprendre</strong> leur contenu afin de les proposer à l'utilisateur lors d'une recherche par mots-clés.</p>
+<p>Pendant longtemps, les moteurs de recherche ne comprenaient que les pages écrites en HTML (trouvables), donc ce n'étaient qu'elles qui étaient indexées. Mais avec le temps, ces moteurs parviennent à comprendre d'autres types de fichiers comme les PDF, les documents Word, etc. Donc actuellement, quand vous faites une recherche sur un moteur de recherche classique, vous avez accès à ces types de pages.</p>
+<h3 id="web-profond">Web Profond</h3>
+<p>Cependant, il existe une multitude de pages ou documents que les moteurs de recherche classiques ne peuvent pas référencer, soit parce qu'ils n'ont tout simplement <strong>pas accès</strong> à la page, soit parce qu'ils ne <strong>peuvent pas la comprendre</strong>.</p>
+<p>On trouve dans le lot les pages avec des liens dynamiques (qui changent en fonction de chaque utilisateur), celles protégées par un mot de passe ou un captcha, les pages sur lesquelles aucun lien ne pointe, les documents non compris par les moteurs de recherche, ou encore les noms de domaines dont la résolution DNS n'est pas standard, avec par exemple une racine qui n'est pas enregistrée chez l’<a href="https://www.icann.org/fr">ICANN</a>. J'entends par là que les racines de nom de domaine connues par l'ICANN sont les .com, .fr, .co, .gouv, etc., mais qu'il en existe des non standards, seulement accessibles via des serveurs DNS non standards. Un exemple connu est la racine .onion dont la résolution n'est possible que via le réseau <a href="https://www.torproject.org/">TOR</a>.</p>
+<p>Vous voyez, il existe de nombreux, <strong>très</strong> nombreux cas pour lesquels les moteurs de recherche tels que nous les connaissons sont incapables d'indexer une ressource. Toutes ces ressources classiquement inaccessibles forment ce qu'on appelle le <em>deep web</em>.</p>
+<h2 id="dark-web">Dark Web</h2>
+<p>Le dark web n’est pas qualifié de « sombre » (dark) parce qu’il est intrinsèquement mauvais ; il est appelé ainsi parce qu’il offre de la confidentialité, qui peut être utilisée à bon ou à mauvais escient. Une grande confusion existe entre le <em>dark web</em> et le <em>deep web</em>. <strong>Non</strong>, le <em>dark web</em> <strong>n'est pas</strong> le <em>deep web</em>. Le <em>dark web</em> est une partie du <em>deep web</em>. Le <em>dark web</em> repose sur les <em>darknets</em>, et un darknet n'est rien d'autre qu'un réseau P2P (<em>peer-to-peer</em>, ami-à-ami) dans lequel les utilisateurs sont considérés comme des personnes de confiance, et les échanges sont anonymes, donc les IP ne sont pas publiquement partagées. Un exemple connu de <em>dark web</em> est <a href="https://freenetproject.org/">Freenet</a>, qui n'est finalement rien de plus qu'un <strong>réseau anonyme</strong> et <strong>distribué</strong> fondé sur l'internet.</p>
+<h3 id="technologies-cles">Technologies Clés</h3>
+<ul>
+<li><strong>Tor (The Onion Router)</strong> : Utilise un système de routage en oignon pour masquer l'adresse IP de l'utilisateur. Chaque nœud du réseau ne connaît que l'adresse précédente et suivante, rendant la traçabilité difficile.</li>
+<li><strong>I2P (Invisible Internet Project)</strong> : Un réseau anonyme qui permet des communications sécurisées et anonymes.</li>
+<li><strong>Freenet</strong> : Un réseau décentralisé qui permet de publier et de stocker des informations de manière anonyme.</li>
+</ul>
+<h3 id="utilisations-legitimes-du-dark-web">Utilisations Légitimes du Dark Web</h3>
+<p>Le dark web n'est pas seulement utilisé pour des activités illégales. Il offre également des avantages pour :</p>
+<ul>
+<li><strong>Journalistes</strong> : Pour communiquer avec des sources de manière sécurisée.</li>
+<li><strong>Activistes</strong> : Pour organiser des mouvements dans des régimes oppressifs.</li>
+<li><strong>Citoyens</strong> : Pour protéger leur vie privée contre la surveillance. confidentialité bien plus élevé.</li>
+</ul>
+<h3 id="risques-et-securite">Risques et Sécurité</h3>
+<p>Naviguer sur le dark web comporte des risques :</p>
+<ul>
+<li><strong>Malware</strong> : Les sites peuvent contenir des logiciels malveillants.</li>
+<li><strong>Escroqueries</strong> : Les transactions peuvent être frauduleuses.</li>
+<li><strong>Surveillance</strong> : Bien que l'anonymat soit un objectif, il n'est pas garanti.</li>
+</ul>
+<p>'espère que ces explications vous ont aidé à mieux comprendre les différences entre deep web et dark web. Il est crucial de ne pas confondre <strong>anonymat</strong> et <strong>illégalité</strong>. Bien que les activités illégales cherchent souvent à rester anonymes, l'inverse n'est pas toujours vrai. Nous avons parfaitement le droit de vouloir rester anonymes pour protéger notre vie privée et éviter la surveillance. Après tout, l'anonymat, c'est la protection de la vie privée.</p>
+<p>Peut-être qu'un prochain article pourrait vous guider sur la manière d'accéder à ces réseaux dans les meilleures conditions ?</p></p>
+    </article>
+</section>
+<!-- endblock -->
+                
+                
+            </main>
+
+            
+                    <!-- block preview -->
+    <div class="preview row row-cols-md-3 text-center pt-md-3" id="component-preview">
+        <div class="col themed-grid-col">
+            <a rel="prev" href="../ActiveDirectory/Kerberos/" class="nav-link">
+                <i class="fa fa-arrow-left"></i> Previous
+            </a>
+        </div>
+        <div class="col themed-grid-col"></div>
+        <div class="col themed-grid-col">
+            <a rel="next" class="nav-link disabled">
+                Next <i class="fa fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+<!-- endblock -->
+            
+
+            
+                    <!-- block footer -->
+<footer class="pt-4 my-md-5 pt-md-5 border-top" id="component-footer">
+    <div class="row">
+        <div class="col-12 col-md">
+                <!-- block copyright -->
+
+    <small class="d-block mb-3">
+        Made with
+        <a href="https://github.com/FernandoCelmer/mkdocs-simple-blog" target="_blank" rel="noopener">
+            Simple Blog for MkDocs
+        </a>
+    </small>
+
+<!-- endblock -->
+        </div>
+    </div>
+</footer>
+<!-- endblock -->
+            
+        </div>
+
+            <script>var base_url = '..';</script>
+            <script src="../assets/js/jquery-3.3.1.slim.min.js""></script>
+            <script src="../assets/js/bootstrap.bundle.min.js""></script>
+            <script src="../assets/js/main.min.js""></script>
+                <script src="../search/main.js" defer></script>
+
+    </body>
+
+</html>
