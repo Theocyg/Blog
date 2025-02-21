@@ -4,8 +4,10 @@ repo_url: https://github.com/Theocyg/Blog
 site_author: Picsou
 nav:
   - Home: index.md
-  - Active Directory: ActiveDirectory.md
-
+  - Active Directory:
+      - Introduction: ActiveDirectory/Introduction.md
+      - Kerberos: ActiveDirectory/Kerberos.md
+      -Darknet : Darknet.md
 theme:
   name: simple-blog
   locale: fr
