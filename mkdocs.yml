@@ -1,19 +1,19 @@
-  site_name: Picsou's Blog
-  
-  repo_url: https://github.com/Theocyg/Blog
-  site_author: Picsou
-  nav:
+site_name: Picsou's Blog
+
+repo_url: https://github.com/Theocyg/Blog
+site_author: Picsou
+nav:
   - Home: index.md
   - About: about.md
 
-  theme: 
-    name: simple-blog
-    locale: fr
-    logo: ./assets/logo/logo.webp
-    features:
+theme:
+  name: simple-blog
+  locale: fr
+  logo: https://github.com/Theocyg/Blog/raw/main/assets/logo/logo.webp
+  features:
     - search.suggest
     - search.highlight
     - search.share
 
-  plugins:
+plugins:
   - search
