@@ -1,7 +1,7 @@
 <!doctype html>
 <html data-bs-theme="">
     <head>
-                <title>Kerberos - Picsou's Blog</title>
+                <title>Cheat Sheet - Picsou's Blog</title>
 
             <meta charset="utf-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,14 +12,14 @@
             <meta name="author" content="Picsou">
 
             
-                <link  rel="icon" type="image/x-icon" href="../../assets/img/favicon.ico">
+                <link  rel="icon" type="image/x-icon" href="../assets/img/favicon.ico">
             
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-            <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
-            <link rel="stylesheet" href="../../assets/css/root.min.css">
-            <link rel="stylesheet" href="../../assets/css/main.min.css">
-                <script src="../../search/main.js"></script>
+            <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+            <link rel="stylesheet" href="../assets/css/root.min.css">
+            <link rel="stylesheet" href="../assets/css/main.min.css">
+                <script src="../search/main.js"></script>
 
             
                 
@@ -56,31 +56,31 @@
             <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="
-                            nav-link text-gray text-decoration-none" href="../..">[Home]</a>
+                            nav-link text-gray text-decoration-none" href="..">[Home]</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class=" active 
+                            <a class="
                             nav-link dropdown-toggle text-decoration-none" href="#" data-bs-toggle="dropdown">[Active Directory]</a>
                             <ul class="dropdown-menu">
                                     <!-- block dropdown-menu -->
     <li>
-        <a href="../Introduction/" class="dropdown-item text-decoration-none ">Introduction</a>
+        <a href="../ActiveDirectory/Introduction/" class="dropdown-item text-decoration-none ">Introduction</a>
     </li>
 <!-- endblock -->
                                     <!-- block dropdown-menu -->
     <li>
-        <a href="./" class="dropdown-item text-decoration-none  active ">Kerberos</a>
+        <a href="../ActiveDirectory/Kerberos/" class="dropdown-item text-decoration-none ">Kerberos</a>
     </li>
 <!-- endblock -->
                             </ul>
                         </li>
                         <li class="nav-item">
                             <a class="
-                            nav-link text-gray text-decoration-none" href="../../Darknet/">[Autres]</a>
+                            nav-link text-gray text-decoration-none" href="../Darknet/">[Autres]</a>
                         </li>
                         <li class="nav-item">
-                            <a class="
-                            nav-link text-gray text-decoration-none" href="../../PrivescLinux/">[Cheat Sheet]</a>
+                            <a class=" active 
+                            nav-link text-gray text-decoration-none" href="./">[Cheat Sheet]</a>
                         </li>
             </ul>
         </li>
@@ -115,7 +115,7 @@
             <main><!-- block search -->
 <div class="collapse" id="collapseExample">
     <div role="search" class="search-box">
-        <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+        <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
             <input type="text" name="q" class="search-query"
             placeholder="Search docs" title="Type search term here" />
         </form>
@@ -129,36 +129,44 @@
     <article>
         <header>
             
-                <h1 class=" title" id="component-title">Kerberos</h1>
+                <h1 class=" title" id="component-title">Cheat Sheet</h1>
             
         </header>
-        <p><p>Active Directory est une solution de Microsoft utilisée pour la gestion d’un système d’information, articulée sur les points suivants :</p>
+        <p><h1 id="manuel-enumeration">Manuel Enumeration</h1>
+<h2 id="informations-systeme">Informations Système</h2>
 <ul>
-<li>Un système d’annuaire de ressources (LDAP)</li>
-<li>Un système d’authentification (Kerberos)</li>
-<li>Un système de résolution de noms (DNS)</li>
-<li>Une politique logicielle homogène</li>
-<li>Nous allons nous intéresser dans cet article à la partie authentification au sein d’un Active Directory, donc à la partie Kerberos.</li>
+<li><code>id</code> : Affiche les informations sur l'utilisateur actuel.</li>
+<li><code>cat /etc/passwd</code> : Affiche les informations sur les utilisateurs du système.</li>
+<li><code>hostname</code> : Affiche le nom d'hôte du système.</li>
+<li><code>cat /etc/issue</code>, <code>cat /etc/os-release</code> : Affiche des informations sur la version du système d'exploitation.</li>
+<li><code>uname -a</code> : Affiche toutes les informations sur le système.</li>
 </ul>
-<p>Kerberos est un protocole qui permet à des utilisateurs de s’authentifier sur le réseau, et d’accéder à des services de manière authentifiée.</p>
-<h1 id="fonctionnement">Fonctionnement</h1>
-<p>Le besoin auquel répond Kerberos est celui d’un utilisateur qui souhaite utiliser un service exposé quelque part sur le réseau, sans pour autant que l’utilisateur ait besoin d’envoyer son mot de passe, et sans que le serveur ait besoin de connaitre les mots de passe de tout le monde. C’est une authentification centralisée.</p>
-<p>Pour répondre à cette problématique, il faut au minimum trois entités</p>
+<h2 id="processus-et-reseau">Processus et Réseau</h2>
 <ul>
-<li>Un client, qui peut être un ordinateur, un service, une personne, …</li>
-<li>Une machine proposant un service</li>
-<li>Un Key Distribution Center ou centre de distribution de clés (KDC) qui est le contrôleur de domaine (DC) en environnement Active Directory</li>
+<li><code>ps aux</code> : Affiche tous les processus en cours d'exécution.</li>
+<li><code>ss -anp</code> : Affiche les connexions réseau actives et les ports en écoute.</li>
+<li><code>netstat</code> : Affiche les connexions réseau, les tables de routage, les statistiques d'interface, etc.</li>
+<li><code>cat /etc/iptables/rules.v4</code> : Affiche les règles iptables pour IPv4.</li>
 </ul>
-<p><img alt="Schéma Kerberos" src="https://github.com/Theocyg/Blog/raw/main/assets/Blog/assets/Kerberos" /></p>
-<p>L’idée est que lorsque le client veut accéder au service, aucun mot de passe ne sera envoyé sur le réseau, évitant ainsi des fuites de ceux-ci qui pourraient compromettre le réseau, et l’authentification est centralisée, c’est au niveau du KDC que ça se passe.</p>
-<p>Pour cela, le processus est un peu lourd, et se découpe en trois étapes :</p>
+<h2 id="taches-planifiees">Tâches Planifiées</h2>
 <ul>
-<li>Authentication Service (AS) : Le client doit s’authentifier auprès du KDC</li>
-<li>Ticket-Granting Ticket (TGT) : Il doit ensuite demander un ticket permettant d’accéder au service choisi (par exemple CIFS)</li>
-<li>Accès au service (AP) : Il communique enfin avec le service en lui fournissant le ticket
-  C’est un peu comme dans certaines soirées. Vous avez votre pièce d’identité que vous avez fait faire et qui prouve que vous êtes bien vous (TGT). Si vous voulez consommer quelque chose, vous devez vous présenter à la caisse avec cette pièce d’identité (TGT) pour demander un ticket de consommation (ticket de service). La caisse vous donne alors un ticket de consommation tamponné, non falsifiable. Une fois en possession de ce ticket, vous pouvez aller au bar et demander votre consommation en présentant le ticket. Le bar peut vérifier que ce ticket vient bien de la caisse grace au tampon, et vous sert un petit Ricard si vous y avez le droit.</li>
+<li><code>ls -lah /etc/cron*</code>, <code>crontab -l</code>, <code>grep “CRON” /var/log/syslog</code> : Affiche les tâches cron planifiées.</li>
+<li><code>cat /etc/cron.hourly/*</code>, <code>/etc/cron.daily/*</code>, <code>/etc/cron.weekly/*</code>, <code>/etc/cron.monthly/*</code> : Affiche les scripts cron planifiés à différents intervalles.</li>
 </ul>
-<p>Très sommairement, le processus ressemble à ça :</p></p>
+<h2 id="applications-et-modules">Applications et Modules</h2>
+<ul>
+<li><code>dpkg -l</code> : Liste toutes les applications installées par dpkg.</li>
+<li><code>find / -writable -type d 2&gt;/dev/null</code> : Trouve les répertoires/fichiers accessibles en écriture.</li>
+<li><code>cat /etc/fstab</code> : Liste tous les systèmes de fichiers montés au démarrage.</li>
+<li><code>mount</code> : Liste tous les systèmes de fichiers actuellement montés.</li>
+<li><code>lsblk</code> : Affiche les disques disponibles.</li>
+<li><code>lsmod</code> : Affiche les modules du noyau chargés.</li>
+<li><code>modinfo &lt;nom_du_module&gt;</code> : Affiche des informations sur un module du noyau spécifique (utilisez <code>lsmod</code> pour lister les modules).</li>
+</ul>
+<h2 id="securite">Sécurité</h2>
+<ul>
+<li><code>find / -perm -u=s -type f 2&gt;/dev/null</code> : Recherche les fichiers avec le bit SUID défini.</li>
+</ul></p>
     </article>
 </section>
 <!-- endblock -->
@@ -170,13 +178,13 @@
                     <!-- block preview -->
     <div class="preview row row-cols-md-3 text-center pt-md-3" id="component-preview">
         <div class="col themed-grid-col">
-            <a rel="prev" href="../Introduction/" class="nav-link">
+            <a rel="prev" href="../Darknet/" class="nav-link">
                 <i class="fa fa-arrow-left"></i> Previous
             </a>
         </div>
         <div class="col themed-grid-col"></div>
         <div class="col themed-grid-col">
-            <a rel="next" href="../../Darknet/" class="nav-link">
+            <a rel="next" class="nav-link disabled">
                 Next <i class="fa fa-arrow-right"></i>
             </a>
         </div>
@@ -206,11 +214,11 @@
             
         </div>
 
-            <script>var base_url = '../..';</script>
-            <script src="../../assets/js/jquery-3.3.1.slim.min.js""></script>
-            <script src="../../assets/js/bootstrap.bundle.min.js""></script>
-            <script src="../../assets/js/main.min.js""></script>
-                <script src="../../search/main.js" defer></script>
+            <script>var base_url = '..';</script>
+            <script src="../assets/js/jquery-3.3.1.slim.min.js""></script>
+            <script src="../assets/js/bootstrap.bundle.min.js""></script>
+            <script src="../assets/js/main.min.js""></script>
+                <script src="../search/main.js" defer></script>
 
     </body>
 
