@@ -4,6 +4,8 @@ repo_url: https://github.com/Theocyg/Blog
 site_author: Picsou
 nav:
   - Home: index.md
+  - Hack The Box:
+      -Addministrator: HackTheBox/Addministrator.md
   - Active Directory:
       - Introduction: ActiveDirectory/Introduction.md
       - Kerberos: ActiveDirectory/Kerberos.md
