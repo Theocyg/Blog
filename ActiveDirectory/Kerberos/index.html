@@ -16,9 +16,12 @@
             
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
             <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
             <link rel="stylesheet" href="../../assets/css/root.min.css">
             <link rel="stylesheet" href="../../assets/css/main.min.css">
+            <link rel="stylesheet" href="../../assets/css/media.min.css">
+            <link rel="stylesheet" href="../../assets/css/mkdocstrings.min.css">
                 <script src="../../search/main.js"></script>
 
             
@@ -57,6 +60,17 @@
                         <li class="nav-item">
                             <a class="
                             nav-link text-gray text-decoration-none" href="../..">[Home]</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="
+                            nav-link dropdown-toggle text-decoration-none" href="#" data-bs-toggle="dropdown">[Hack The Box]</a>
+                            <ul class="dropdown-menu">
+                                    <!-- block dropdown-menu -->
+    <li>
+        <a href="../../Hack%20The%20Box/Administrator/" class="dropdown-item text-decoration-none ">Administrator</a>
+    </li>
+<!-- endblock -->
+                            </ul>
                         </li>
                         <li class="nav-item dropdown">
                             <a class=" active 
@@ -132,33 +146,7 @@
                 <h1 class=" title" id="component-title">Kerberos</h1>
             
         </header>
-        <p><p>Active Directory est une solution de Microsoft utilisée pour la gestion d’un système d’information, articulée sur les points suivants :</p>
-<ul>
-<li>Un système d’annuaire de ressources (LDAP)</li>
-<li>Un système d’authentification (Kerberos)</li>
-<li>Un système de résolution de noms (DNS)</li>
-<li>Une politique logicielle homogène</li>
-<li>Nous allons nous intéresser dans cet article à la partie authentification au sein d’un Active Directory, donc à la partie Kerberos.</li>
-</ul>
-<p>Kerberos est un protocole qui permet à des utilisateurs de s’authentifier sur le réseau, et d’accéder à des services de manière authentifiée.</p>
-<h1 id="fonctionnement">Fonctionnement</h1>
-<p>Le besoin auquel répond Kerberos est celui d’un utilisateur qui souhaite utiliser un service exposé quelque part sur le réseau, sans pour autant que l’utilisateur ait besoin d’envoyer son mot de passe, et sans que le serveur ait besoin de connaitre les mots de passe de tout le monde. C’est une authentification centralisée.</p>
-<p>Pour répondre à cette problématique, il faut au minimum trois entités</p>
-<ul>
-<li>Un client, qui peut être un ordinateur, un service, une personne, …</li>
-<li>Une machine proposant un service</li>
-<li>Un Key Distribution Center ou centre de distribution de clés (KDC) qui est le contrôleur de domaine (DC) en environnement Active Directory</li>
-</ul>
-<p><img alt="Schéma Kerberos" src="https://github.com/Theocyg/Blog/raw/main/assets/Blog/assets/Kerberos" /></p>
-<p>L’idée est que lorsque le client veut accéder au service, aucun mot de passe ne sera envoyé sur le réseau, évitant ainsi des fuites de ceux-ci qui pourraient compromettre le réseau, et l’authentification est centralisée, c’est au niveau du KDC que ça se passe.</p>
-<p>Pour cela, le processus est un peu lourd, et se découpe en trois étapes :</p>
-<ul>
-<li>Authentication Service (AS) : Le client doit s’authentifier auprès du KDC</li>
-<li>Ticket-Granting Ticket (TGT) : Il doit ensuite demander un ticket permettant d’accéder au service choisi (par exemple CIFS)</li>
-<li>Accès au service (AP) : Il communique enfin avec le service en lui fournissant le ticket
-  C’est un peu comme dans certaines soirées. Vous avez votre pièce d’identité que vous avez fait faire et qui prouve que vous êtes bien vous (TGT). Si vous voulez consommer quelque chose, vous devez vous présenter à la caisse avec cette pièce d’identité (TGT) pour demander un ticket de consommation (ticket de service). La caisse vous donne alors un ticket de consommation tamponné, non falsifiable. Une fois en possession de ce ticket, vous pouvez aller au bar et demander votre consommation en présentant le ticket. Le bar peut vérifier que ce ticket vient bien de la caisse grace au tampon, et vous sert un petit Ricard si vous y avez le droit.</li>
-</ul>
-<p>Très sommairement, le processus ressemble à ça :</p></p>
+        <p><h1 id="bientot">Bientot</h1></p>
     </article>
 </section>
 <!-- endblock -->
