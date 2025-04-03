@@ -312,7 +312,8 @@ Next stop → <strong>benjamin</strong> 🚀</p>
 <p>Une fois dedans, je balance :</p>
 <pre><code class="language-bash">setuserinfo2 benjamin 23 'benjamin'
 </code></pre>
-<p>🧠 Ici, <code>23</code> correspond au niveau de sécurité de l’opération (set password). C’est une vieille astuce avec <code>rpcclient</code> pour modifier un mot de passe d’un user sans shell, juste via RPC.<a class="glightbox" href="../../assets/memes/NerdCat.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="NerdCat" src="../../assets/memes/NerdCat.png" /></a></p>
+<p>🧠 Ici, <code>23</code> correspond au niveau de sécurité de l’opération (set password). C’est une vieille astuce avec <code>rpcclient</code> pour modifier un mot de passe d’un user sans shell, juste via RPC.</p>
+<p><a class="glightbox" href="../../assets/memes/NerdCat.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="NerdCat" src="../../assets/memes/NerdCat.png" width="300" /></a></p>
 <p>Je sors de <code>rpcclient</code>, et je teste les creds fraîchement créés :</p>
 <pre><code class="language-bash">crackmapexec smb 10.10.11.42 -u 'benjamin' -p 'benjamin'
 </code></pre>
@@ -322,8 +323,9 @@ Next stop → <strong>benjamin</strong> 🚀</p>
 <p>🔓 Un compte de plus dans la poche !</p>
 <hr />
 <h2 id="ftp-avec-benjamin-objectif-emily">📁 FTP avec Benjamin – Objectif : Emily</h2>
-<p>Bon, je check vite fait sur BloodHound si <code>benjamin</code> a des droits intéressants. Mais nada, il est tout claqué.<a class="glightbox" href="../../assets/memes/OhHellNah.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="NerdCat" src="../../assets/memes/OhHellNah.png" width="300" /></a>
-Par contre, je remarque qu’il est membre du groupe <strong>Share Moderators</strong>, donc je tente sa connexion sur le <strong>FTP</strong>.</p>
+<p>Bon, je check vite fait sur BloodHound si <code>benjamin</code> a des droits intéressants. Mais nada, il est tout claqué.</p>
+<p><a class="glightbox" href="../../assets/memes/OhHellNah.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="NerdCat" src="../../assets/memes/OhHellNah.png" width="300" /></a></p>
+<p>Par contre, je remarque qu’il est membre du groupe <strong>Share Moderators</strong>, donc je tente sa connexion sur le <strong>FTP</strong>.</p>
 <pre><code class="language-bash">ftp 10.10.11.42
 </code></pre>
 <p>Je tape les creds :</p>
@@ -377,7 +379,8 @@ ftp&gt; get Backup.psafe3
 <p>🧠 Pour rappel : GenericWrite = je peux modifier les attributs du compte (genre, son SPN) → parfait pour un <strong>Kerberoasting</strong>.<a class="glightbox" href="../../assets/memes/NerdCat.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="NerdCat" src="../../assets/memes/NerdCat.png" width="300" /></a></p>
 <hr />
 <h2 id="sync-de-lheure-kerberos-oblige">🕰️ Sync de l’heure (Kerberos oblige)</h2>
-<p>Avant toute chose, il faut sync sa machine avec l’heure du DC, sinon Kerberos nous claque la porte au nez (Je parle d'experience j'me suis manger un <code>Clock Skew</code>) <a class="glightbox" href="../../assets/memes/Aigri.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="L'homme le plus aigri de France" src="../../assets/memes/Aigri.png" /></a>
+<p>Avant toute chose, il faut sync sa machine avec l’heure du DC, sinon Kerberos nous claque la porte au nez (Je parle d'experience j'me suis manger un <code>Clock Skew</code>)</p>
+<p><a class="glightbox" href="../../assets/memes/Aigri.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="L'homme le plus aigri de France" src="../../assets/memes/Aigri.png" /></a>
 :</p>
 <pre><code class="language-bash">sudo ntpdate -u 10.10.11.42
 </code></pre>
@@ -409,9 +412,8 @@ ftp&gt; get Backup.psafe3
 <p>Et pour les puristes, je sors aussi l’artillerie old school :</p>
 <pre><code class="language-bash">psexec.py administrator.htb/Administrator@10.10.11.42 -hashes :3dc553ce4b9fd20bd016e098******
 </code></pre>
-<p>→ SYSTEM, baby.
-<a class="glightbox" href="../../assets/memes/HackerMeme.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Hackeur" src="../../assets/memes/HackerMeme.png" width="1000" /></a></p>
-<hr />
+<p>→ SYSTEM, baby.</p>
+<h2 id="_1"><a class="glightbox" href="../../assets/memes/HackerMeme.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Hackeur" src="../../assets/memes/HackerMeme.png" width="1000" /></a></h2>
 <h2 id="resume-des-users-creds">🧩 Résumé des users / creds</h2>
 <table>
 <thead>
