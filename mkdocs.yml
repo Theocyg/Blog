@@ -5,7 +5,7 @@ site_author: Picsou
 nav:
   - Home: index.md
   - Hack The Box:
-      -Addministrator: HackTheBox/Addministrator.md
+      - Administrator: Hack The Box/Administrator.md
   - Active Directory:
       - Introduction: ActiveDirectory/Introduction.md
       - Kerberos: ActiveDirectory/Kerberos.md
