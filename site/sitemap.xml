@@ -1,3 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://theocyg.github.io/Blog/</loc>
+         <lastmod>2025-04-03</lastmod>
+    </url>
+    <url>
+         <loc>https://theocyg.github.io/Blog/Darknet/</loc>
+         <lastmod>2025-04-03</lastmod>
+    </url>
+    <url>
+         <loc>https://theocyg.github.io/Blog/PrivescLinux/</loc>
+         <lastmod>2025-04-03</lastmod>
+    </url>
+    <url>
+         <loc>https://theocyg.github.io/Blog/ActiveDirectory/Introduction/</loc>
+         <lastmod>2025-04-03</lastmod>
+    </url>
+    <url>
+         <loc>https://theocyg.github.io/Blog/ActiveDirectory/Kerberos/</loc>
+         <lastmod>2025-04-03</lastmod>
+    </url>
+    <url>
+         <loc>https://theocyg.github.io/Blog/Hack%20The%20Box/Administrator/</loc>
+         <lastmod>2025-04-03</lastmod>
+    </url>
 </urlset>
