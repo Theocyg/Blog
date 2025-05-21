@@ -20,6 +20,16 @@ theme:
     - search.suggest
     - search.highlight
     - search.share
+  palette:
+    # Couleurs plus sombres pour soutenir le style rétro
+    primary: black
+    accent: green
+
+extra_css:
+  - stylesheets/retro-crt.css
+
+extra_javascript:
+  - javascripts/retro-crt.js
 
 plugins:
   - search
@@ -29,3 +39,13 @@ markdown_extensions:
   - attr_list
   - md_in_html
   - pymdownx.blocks.caption
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - admonition
+  - pymdownx.details
+
+extra:
+  generator: false  # Masque le texte "Made with MkDocs"
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Theocyg
