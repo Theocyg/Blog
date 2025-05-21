@@ -823,18 +823,25 @@ Base de connaissances sur l'attaque et la défense d'infrastructures Active Dire
 <div class="updates-container">
 <div class="update-item">
 <div class="update-date">[2025-05-21]</div>
+<div class="update-title">Refonte du site</div>
+<div class="update-desc">Refonte complet du site et ajoute de cheat sheet</div>
+</div>
+
+<div class="updates-container">
+<div class="update-item">
+<div class="update-date">[2025-04-2]</div>
 <div class="update-title">Nouveau write-up : Administrator</div>
 <div class="update-desc">Write-up complet de la machine Administrator sur Hack The Box. [Difficulté: Moyenne]</div>
 </div>
 
 <div class="update-item">
-<div class="update-date">[2025-05-15]</div>
+<div class="update-date">[2025-02-15]</div>
 <div class="update-title">Guide sur Kerberos</div>
 <div class="update-desc">Ajout d'un guide détaillé sur le fonctionnement de Kerberos et ses vulnérabilités.</div>
 </div>
 
 <div class="update-item">
-<div class="update-date">[2025-05-10]</div>
+<div class="update-date">[2025-02-10]</div>
 <div class="update-title">Cheat Sheet Privilege Escalation Linux</div>
 <div class="update-desc">Nouvelle cheat sheet sur l'élévation de privilèges sous Linux.</div>
 </div>
@@ -847,22 +854,6 @@ document.addEventListener('DOMContentLoaded', function() {
   const bootSequence = document.getElementById('boot-sequence');
   if (!bootSequence) return;
 
-  // Créer une div avec la classe terminal-box
-  const terminalBox = document.createElement('div');
-  terminalBox.className = 'terminal-box';
-  terminalBox.innerHTML = '<div class="terminal-header">INITIALISATION DU SYSTÈME...</div>';
-  bootSequence.appendChild(terminalBox);
-
-  // Lignes de démarrage
-  const bootLines = [
-    "CHARGEMENT DU SYSTÈME...",
-    "VÉRIFICATION DES MODULES MÉMOIRE... OK",
-    "CHARGEMENT DU SYSTÈME DE FICHIERS... OK",
-    "MONTAGE DE LA BASE DE DONNÉES DE CYBERSÉCURITÉ... OK",
-    "CONNEXION À LA MATRICE... ÉTABLIE",
-    "CHARGEMENT DES WRITE-UPS... OK",
-    "BIENVENUE SUR LE BLOG DE PICSOU, UTILISATEUR AUTHENTIFIÉ."
-  ];
 
   let lineIndex = 0;
   const bootInterval = setInterval(() => {
